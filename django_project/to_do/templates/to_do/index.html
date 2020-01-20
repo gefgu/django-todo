@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class='container'>
+    <h4>Create Task</h2>
+    <form>
+
+    </form>
+    </div>
+    <div class='container tasks-container'>
+        <ul>
+        {% for task in tasks %}
+            <li><p>{{ task }}</p></li>
+        {% endfor %}
+        <ul>
+    </div>
+{% endblock %}
