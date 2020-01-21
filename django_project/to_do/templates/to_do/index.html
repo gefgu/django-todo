@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class='container'>
+    <div class='container form'>
     <h4>Create Task</h2>
-    <form>
-
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <form action="" method="post">
+    {% csrf_token %}
+    
     </form>
     </div>
     <div class='container tasks-container'>
