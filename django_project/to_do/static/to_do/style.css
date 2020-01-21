@@ -5,3 +5,17 @@
 .tasks-container {
     margin-top: 20px;
 }
+
+form label{
+    font-size: 18px;
+}
+
+h1{
+    text-align: center;
+}
+
+
+.table {
+    margin: auto;
+    width: 50%;
+}

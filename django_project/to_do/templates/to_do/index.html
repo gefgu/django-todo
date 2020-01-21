@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class='container form'>
-    <h4>Create Task</h2>
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-    <form action="" method="post">
-    {% csrf_token %}
-    
-    </form>
-    </div>
     <div class='container tasks-container'>
-        <ul>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <table class="table table-responsive text-center">
+        <tr>
+            <form action="" method="post">
+            {% csrf_token %}
+            <td><label for='id_task_text'>Create Task: </label></td>
+            <td><input type="text" name="task_text" maxlength=50 required id="id_task_text" class="form-control"></input></td>
+            <td><button type="submit" class="btn btn-primary">Submit</button></td>
+            </form>
+        </tr>
         {% for task in tasks %}
-            <li><p>{{ task }}</p></li>
+            <tr>
+                <td><p>{{ task }}</p></td>
+                <td></td>
+                <td><a href='{% url 'to_do:delete' task.id %}' class="btn btn-danger" role="button">Delete</a></td>
+            </tr>
         {% endfor %}
-        <ul>
+        <table>
     </div>
 {% endblock %}
